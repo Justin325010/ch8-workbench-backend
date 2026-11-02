@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>热化学多场工业智能体工作台</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AI</div>
+        <div>
+          <h1>热化学多场智能体</h1>
+          <p>工业现场工作台</p>
+        </div>
+      </div>
+      <div class="project-switcher">
+        <label>现场项目</label>
+        <select id="projectSelect"></select>
+      </div>
+      <nav class="stepper" id="stepper"></nav>
+      <div class="sidebar-foot">
+        <div class="status-line"><span class="status-dot"></span><span id="engineStatus">正在连接模型服务…</span></div>
+        <div class="safety-note">大模型提供通用先验 · 小模型负责现场适配<br/>DeepSeek 不直接控制设备</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="sub">ACTIVE PROJECT</div>
+          <h2 id="projectTitle">尚未创建项目</h2>
+        </div>
+        <div class="top-actions">
+          <span class="badge muted" id="gateBadge">未通过确认门</span>
+          <button class="btn ghost" id="newProjectBtn">新建项目</button>
+        </div>
+      </header>
+      <section id="stagePanel" class="stage-panel"></section>
+    </main>
+  </div>
+
+  <aside class="assistant-panel" id="assistantPanel">
+    <div class="assistant-head" id="assistantHead">
+      <span class="pulse"></span>
+      <strong>现场助手</strong>
+      <button class="mini-btn" id="assistantToggle">收起</button>
+    </div>
+    <div class="assistant-log" id="assistantLog"></div>
+    <div class="assistant-input">
+      <input id="assistantInput" placeholder="例如：为什么推荐调整当量比？" />
+      <button id="assistantSend" class="btn primary">发送</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+  <script src="/static/vendor/plotly.min.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
